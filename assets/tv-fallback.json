@@ -1,0 +1,801 @@
+{
+  "channels": [
+    {
+      "id": "AbanteTV.ph",
+      "name": "Abante TV",
+      "country": "PH",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://amg19223-amg19223c12-amgplt0352.playout.now3.amagi.tv/playlist/amg19223-amg19223c12-amgplt0352/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "BilyonaryoNewsChannel.ph",
+      "name": "Bilyonaryo News Channel",
+      "country": "PH",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://amg19223-amg19223c11-amgplt0352.playout.now3.amagi.tv/playlist/amg19223-amg19223c11-amgplt0352/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "PremierSports.ph",
+      "name": "Premier Sports",
+      "country": "PH",
+      "logo": "",
+      "category": "sports",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://amg19223-amg19223c3-amgplt0351.playout.now3.amagi.tv/playlist/amg19223-amg19223c3-amgplt0351/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "PremierSports2.ph",
+      "name": "Premier Sports 2",
+      "country": "PH",
+      "logo": "",
+      "category": "sports",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://amg19223-amg19223c4-amgplt0351.playout.now3.amagi.tv/playlist/amg19223-amg19223c4-amgplt0351/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "CLTV36.ph",
+      "name": "CLTV 36",
+      "country": "PH",
+      "logo": "",
+      "category": "general",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://live.cltv36.tv:5443/LiveApp/streams/cltvlive.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "MindanowNetworkTV.ph",
+      "name": "Mindanow Network TV",
+      "country": "PH",
+      "logo": "",
+      "category": "general",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://cdn.vegasplus.us/vegas/mmn01/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "SMNI.ph",
+      "name": "SMNI",
+      "country": "PH",
+      "logo": "",
+      "category": "general",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://stream.kdlc.click/hls/0/stream.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "CCTN47.ph",
+      "name": "CCTN 47",
+      "country": "PH",
+      "logo": "",
+      "category": "religious",
+      "languages": [],
+      "streams": [
+        {
+          "url": "http://122.55.252.134:8443/live/bba5b536faeacb9b56a3239f1ee8e3b3/1.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "HopeChannelPhilippines.ph",
+      "name": "Hope Channel Philippines",
+      "country": "PH",
+      "logo": "",
+      "category": "religious",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://jstre.am/live/jsl:nX5eC7gQvZb.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "INCRadio.ph",
+      "name": "INC Radio",
+      "country": "PH",
+      "logo": "",
+      "category": "religious",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://stream-243529.castr.net/6842a712b68c56f675d988f1/live_b60a96e056fc11f084c05f5d0649296b/rewind-1800.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "INCTV.ph",
+      "name": "INC TV",
+      "country": "PH",
+      "logo": "",
+      "category": "religious",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://stream-243529.castr.net/6842a712b68c56f675d988f1/live_f5ac22b0566511f0805217b960326aaa/rewind-1800.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "LivingAsiaChannel.ph",
+      "name": "Living Asia Channel",
+      "country": "PH",
+      "logo": "",
+      "category": "travel",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://cdn.vegasplus.us/vegas/lac/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "10TV.in",
+      "name": "10 TV",
+      "country": "IN",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://mumbai-edge.smartplaytv.in/10TV/index.m3u8",
+          "referrer": "",
+          "userAgent": null
+        },
+        {
+          "url": "https://cdn.pishow.tv/ott/live/391/master.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "100NEWS.ua",
+      "name": "100% NEWS",
+      "country": "UA",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "http://85.238.112.40:8810/hls_sec/239.33.16.32-.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "101tvMalaga.es",
+      "name": "101tv Malaga",
+      "country": "ES",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://liveingesta318.cdnmedia.tv/101weblive/smil:malaga.smil/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "13SiamThai.th",
+      "name": "13 Siam Thai",
+      "country": "TH",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://live.x2.co.th/live/13livetv-th.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "22ScopeNews.in",
+      "name": "22Scope News",
+      "country": "IN",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://thelegitpro.in/HDlive/22scope/index.fmp4.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "24Horas.cl",
+      "name": "24 Horas",
+      "country": "CL",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "http://187.102.208.209:8000/play/a0a1/index.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "24Horas.es",
+      "name": "24 Horas",
+      "country": "ES",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://ztnr.rtve.es/ztnr/1694255.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "24HorasCanarias.es",
+      "name": "24 Horas Canarias",
+      "country": "ES",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "http://185.47.212.25:8080/24h_HD/index.m3u8",
+          "referrer": "",
+          "userAgent": null
+        },
+        {
+          "url": "https://ztnr.rtve.es/ztnr/5473142.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "24HorasCatalunya.es",
+      "name": "24 Horas Catalunya",
+      "country": "ES",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://ztnr.rtve.es/ztnr/4952053.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "24Kanal.ua",
+      "name": "24 Kanal",
+      "country": "UA",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://cdn15.live-tv.cloud/ua_infinitas_tv/news24-abr/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "24News.in",
+      "name": "24 News",
+      "country": "IN",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://mumt07.tangotv.in/zHjX9OFlTWENTYFOURNEWS/index.m3u8",
+          "referrer": "",
+          "userAgent": null
+        },
+        {
+          "url": "https://segment.yuppcdn.net/110322/channel24/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "24NewsHD.pk",
+      "name": "24 News HD",
+      "country": "PK",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://cdn4.mjunoon.tv:8087/streamtest/146M/chunks.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "24TV.tr",
+      "name": "24 TV",
+      "country": "TR",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://tv.ensonhaber.com/tv24/tv24.m3u8",
+          "referrer": "",
+          "userAgent": null
+        },
+        {
+          "url": "https://turkmedya-live.ercdn.net/tv24/tv24.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "247CanaldeNoticias.ar",
+      "name": "24/7 Canal de Noticias",
+      "country": "AR",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://panel.host-live.com:19360/cn247tv/cn247tv.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "24KZ.kz",
+      "name": "24KZ",
+      "country": "KZ",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://fs.uplink.kz/24KZ/mono.m3u8?token=onlinetv",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "2GB.au",
+      "name": "2GB",
+      "country": "AU",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://2gblive.akamaized.net/hls/live/2033805/2GB/index.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "30ALionelNation.us",
+      "name": "30A Lionel Nation",
+      "country": "US",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://30a-tv.com/ln.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "30ALoomeredTV.us",
+      "name": "30A Loomered TV",
+      "country": "US",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://30a-tv.com/loomer.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "360.tr",
+      "name": "360",
+      "country": "TR",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://turkmedya-live.ercdn.net/tv360/tv360.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "360News.ru",
+      "name": "360° News",
+      "country": "RU",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://edge-tv-ll.facecast.io/evacoder_hls_hi/UBZfFgtKB1JwTwoDERNQVGGs/index.m3u8",
+          "referrer": "",
+          "userAgent": null
+        },
+        {
+          "url": "https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-03-srt.smil/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "365News.pk",
+      "name": "365 News",
+      "country": "PK",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://cdn4.mjunoon.tv:8087/streamtest/140M/chunks.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "3AW.au",
+      "name": "3AW",
+      "country": "AU",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://3awlive.akamaized.net/hls/live/2032295/3AW/index.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "3CatExclusiu1.es",
+      "name": "3Cat Exclusiu 1",
+      "country": "ES",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://directes-tv-cat.3catdirectes.cat/live-content/oca1-hls/master.m3u8",
+          "referrer": "",
+          "userAgent": null
+        },
+        {
+          "url": "https://directes-tv-cat.3catdirectes.cat/live-origin/oca1-hls/master.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "3CatExclusiu2.es",
+      "name": "3Cat Exclusiu 2",
+      "country": "ES",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://directes-tv-cat.3catdirectes.cat/live-content/oca2-hls/master.m3u8",
+          "referrer": "",
+          "userAgent": null
+        },
+        {
+          "url": "https://directes-tv-cat.3catdirectes.cat/live-origin/oca2-hls/master.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "3CatExclusiu3.es",
+      "name": "3Cat Exclusiu 3",
+      "country": "ES",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://directes-tv-cat.3catdirectes.cat/live-content/oca3-hls/master.m3u8",
+          "referrer": "",
+          "userAgent": null
+        },
+        {
+          "url": "https://directes-tv-cat.3catdirectes.cat/live-origin/oca3-hls/master.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "3CatInfo.es",
+      "name": "3CatInfo",
+      "country": "ES",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://directes-tv-int.3catdirectes.cat/live-origin/canal324-hls/master.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "4SiDESTV.in",
+      "name": "4 SiDES TV",
+      "country": "IN",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://stream.ottlive.co.in/4sidestv/index.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "4DmasNoticiasTV.py",
+      "name": "4Dmas Noticias TV",
+      "country": "PY",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://rds3.desdeparaguay.net/4dmasnoticiastv/4dmasnoticiastv/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "4TVNews.in",
+      "name": "4TV News",
+      "country": "IN",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://cdn.pishow.tv/ott/live/1007/master.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "6TVTelugu.in",
+      "name": "6 TV Telugu",
+      "country": "IN",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://yuppparoriglin.akamaized.net/181224/smil:6tv.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b",
+          "referrer": "",
+          "userAgent": null
+        },
+        {
+          "url": "https://mumt03.tangotv.in/Dsly5z3H6TVTELUGU/index.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "6PR.au",
+      "name": "6PR",
+      "country": "AU",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://6prlive.akamaized.net/hls/live/2033806/6PR/index.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "7Info.ci",
+      "name": "7 Info",
+      "country": "CI",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://video1.getstreamhosting.com:1936/8042/8042/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "7News.pk",
+      "name": "7 News",
+      "country": "PK",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://sscsott.com/7news/live/index.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "9PlusNews.in",
+      "name": "9 Plus News",
+      "country": "IN",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://stream.ottlive.co.in/9plusnews/index.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "92NewsHD.pk",
+      "name": "92 News HD",
+      "country": "PK",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "http://92news.vdn.dstreamone.net/92newshd/92hd/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "99TV.in",
+      "name": "99TV",
+      "country": "IN",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://cdn.pishow.tv/ott/live/1211/master.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "24.sk",
+      "name": ":24",
+      "country": "SK",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "http://88.212.15.27/live/test_trojka_25p/playlist.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    },
+    {
+      "id": "AHaber.tr",
+      "name": "A Haber",
+      "country": "TR",
+      "logo": "",
+      "category": "news",
+      "languages": [],
+      "streams": [
+        {
+          "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber.m3u8",
+          "referrer": "",
+          "userAgent": null
+        }
+      ]
+    }
+  ],
+  "source": "IPTV-Org",
+  "fetchedAt": 0
+}

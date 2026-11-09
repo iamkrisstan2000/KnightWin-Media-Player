@@ -1,0 +1,49 @@
+<Window x:Class="RevibeMediaCentre.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        Title="KnightWin Media Player"
+        Width="1440" Height="900"
+        MinWidth="1024" MinHeight="600"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="CanResize"
+        Background="Transparent"
+        AllowsTransparency="False"
+        ShowInTaskbar="True"
+        Loaded="Window_Loaded"
+        SourceInitialized="Window_SourceInitialized"
+        StateChanged="Window_StateChanged"
+        SizeChanged="Window_SizeChanged"
+        LocationChanged="Window_LocationChanged"
+        Closed="Window_Closed">
+  <!-- Extend DWM material under the full WPF/WebView2 client area; zero keeps Acrylic out of the content. -->
+  <shell:WindowChrome.WindowChrome>
+    <shell:WindowChrome CaptionHeight="0"
+                        ResizeBorderThickness="8"
+                        GlassFrameThickness="-1"
+                        CornerRadius="8"
+                        UseAeroCaptionButtons="False" />
+  </shell:WindowChrome.WindowChrome>
+  <Grid Background="Transparent" ClipToBounds="True">
+    <wv2:WebView2 x:Name="Browser" DefaultBackgroundColor="Transparent" />
+    <Border x:Name="StartupOverlay" Background="#FFF3F5F7" Padding="32">
+      <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Text="KnightWin Media Player" HorizontalAlignment="Center" Foreground="#20262E" FontSize="22" FontWeight="SemiBold" />
+        <TextBlock Text="A modern successor to Revibe Media Centre" HorizontalAlignment="Center" Margin="0,7,0,0" Foreground="#66717E" FontSize="12" />
+        <Border Width="54" Height="3" Margin="0,20,0,0" HorizontalAlignment="Center" CornerRadius="2" Background="#5A9A68" />
+      </StackPanel>
+    </Border>
+    <Border x:Name="RuntimeErrorOverlay" Visibility="Collapsed" Background="#F3111419" Padding="36">
+      <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="620">
+        <TextBlock Text="KnightWin Media Player" FontSize="28" FontWeight="SemiBold" Foreground="#F4F5F7" Margin="0,0,0,10" />
+        <TextBlock x:Name="RuntimeErrorText" TextWrapping="Wrap" FontSize="14" LineHeight="22" Foreground="#C5C9D0" />
+        <StackPanel Orientation="Horizontal" Margin="0,22,0,0">
+          <Button Content="Install WebView2 Runtime" Width="190" Height="36" HorizontalAlignment="Left" Click="RuntimeInstall_Click" />
+          <Button Content="Close" Width="110" Height="36" Margin="10,0,0,0" HorizontalAlignment="Left" Click="RuntimeErrorClose_Click" />
+        </StackPanel>
+      </StackPanel>
+    </Border>
+  </Grid>
+</Window>

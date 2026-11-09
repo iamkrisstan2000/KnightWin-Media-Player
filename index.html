@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#e8f3ee" />
+  <meta name="description" content="KnightWin Media Player — your music, videos, and open TV streams, together." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: file: http: https:; media-src 'self' data: blob: file: http: https:; connect-src 'self' data: blob: http: https: ws: wss:; font-src 'self' data:; object-src 'none'; base-uri 'self';">
+  <title>KnightWin Media Player</title>
+  <script src="./src/theme-bootstrap.js"></script>
+  <link rel="icon" type="image/png" href="./assets/app-icon.png" />
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body data-mode="light" data-accent="matcha">
+  <div class="app-shell" id="appShell">
+    <header class="titlebar" id="titlebar">
+      <div class="brand-lockup" aria-label="KnightWin Media Player">
+        <span class="brand-mark" aria-hidden="true"><img src="./assets/app-icon.png" width="21" height="21" alt="" /></span>
+        <span class="brand-name">KnightWin <span>Media Player</span></span>
+      </div>
+      <div class="titlebar-spacer" aria-hidden="true"></div>
+      <div class="window-actions" aria-label="Window controls">
+        <button class="window-action" data-window="minimize" aria-label="Minimize" title="Minimize"><span class="minimize-glyph"></span></button>
+        <button class="window-action" data-window="maximize" aria-label="Maximize" title="Maximize"><span class="maximize-glyph"></span></button>
+        <button class="window-action close-action" data-window="close" aria-label="Close" title="Close"><span class="close-glyph"></span></button>
+      </div>
+    </header>
+
+    <nav class="top-navigation" id="topNavigation" aria-label="Main navigation">
+      <div class="nav-items" id="navItems">
+        <button class="nav-item is-active" data-page="home" title="Home"><span class="icon-slot" data-icon="home"></span><span class="nav-label">Home</span></button>
+        <button class="nav-item" data-page="music" title="Music"><span class="icon-slot" data-icon="music"></span><span class="nav-label">Music</span></button>
+        <button class="nav-item" data-page="video" title="Video"><span class="icon-slot" data-icon="video"></span><span class="nav-label">Video</span></button>
+        <button class="nav-item" data-page="tv" title="TV"><span class="icon-slot" data-icon="tv"></span><span class="nav-label">TV</span></button>
+      </div>
+      <div class="nav-trailing">
+        <button class="nav-item settings-nav" data-page="settings" title="Settings" aria-label="Settings"><span class="icon-slot" data-icon="settings"></span></button>
+        <div class="search-wrap top-search-wrap">
+          <span class="icon-slot" data-icon="search"></span>
+          <input id="globalSearch" type="search" placeholder="Search all media…" autocomplete="off" aria-label="Search all media" />
+          <div class="search-results" id="searchResults" hidden></div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-host" id="pageHost">
+      <section class="page page-home is-visible" id="page-home" aria-label="Home">
+        <div class="content-wrap home-content">
+          <div class="page-heading home-heading">
+            <div>
+              <h1>Home</h1>
+              <p class="page-subtitle">Welcome back to your personalized media library.</p>
+            </div>
+          </div>
+          <div class="home-feed">
+            <section class="content-section">
+              <div class="section-heading">
+                <div class="section-title"><span class="section-icon"><span class="icon-slot" data-icon="clock"></span></span><div><h2>Recently played</h2><p>Pick up right where you left off.</p></div></div>
+                <button class="text-button" id="recentViewAll">View all <span class="icon-slot" data-icon="arrow-right"></span></button>
+              </div>
+              <div class="recent-grid" id="recentGrid"></div>
+            </section>
+            <section class="content-section recommendations-section" aria-labelledby="recommendationsTitle">
+              <div class="section-heading">
+                <div class="section-title"><span class="section-icon"><span class="icon-slot" data-icon="sparkles"></span></span><div><h2 id="recommendationsTitle">Media you might like</h2><p>Random picks from your music, video library and TV guide.</p></div></div>
+                <button class="text-button" id="refreshRecommendations" aria-label="Shuffle recommendations" title="Shuffle recommendations"><span class="icon-slot" data-icon="shuffle"></span>Shuffle picks</button>
+              </div>
+              <div class="recent-grid recommendation-grid" id="recommendationsGrid"></div>
+            </section>
+            <section class="content-section tv-updates-section">
+              <div class="section-heading">
+                <div class="section-title"><span class="section-icon"><span class="icon-slot" data-icon="broadcast"></span></span><div><h2>Recent TV Updates</h2><p id="tvUpdateCaption">Open stream guide · checking for updates…</p></div></div>
+                <button class="text-button" data-goto="tv">Channel guide <span class="icon-slot" data-icon="arrow-right"></span></button>
+              </div>
+              <div class="tv-update-grid" id="tvUpdateGrid"></div>
+            </section>
+            <section class="content-section newly-added-section">
+              <div class="section-heading">
+                <div class="section-title"><span class="section-icon"><span class="icon-slot" data-icon="sparkles"></span></span><div><h2>Newly added</h2><p>Your latest additions across music, video and TV.</p></div></div>
+                <button class="text-button" id="newlyAddedViewAll">Explore media <span class="icon-slot" data-icon="arrow-right"></span></button>
+              </div>
+              <div class="newly-grid" id="newlyGrid"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="page page-music" id="page-music" aria-label="Music" hidden>
+        <div class="content-wrap player-content">
+          <div class="page-heading compact-heading">
+            <div><h1>Music</h1><p class="page-subtitle">A little space for the songs that move you.</p></div>
+
+          </div>
+          <div class="media-workspace">
+            <section class="music-stage panel-surface" aria-label="Now playing">
+              <div class="stage-topline">
+                <div class="section-title"><span class="section-icon"><span class="icon-slot" data-icon="music"></span></span><div><h2>Now Playing</h2><p id="musicStageSubtitle">The sound is yours.</p></div></div>
+                <span class="live-pill"><span class="pulse-dot"></span><span id="musicStatusLabel">READY</span></span>
+              </div>
+              <div class="visualizer-wrap" id="visualizerWrap">
+                <canvas id="visualizer" aria-label="Beat-reactive music visualization"></canvas>
+                <div class="visualizer-vignette"></div>
+                <div class="visualizer-center" id="visualizerCenter">
+                  <div class="viz-album-art" id="vizAlbumArt"><span class="icon-slot" data-icon="music"></span></div>
+                  <h3 id="visualizerTitle">Make room for a feeling.</h3>
+                  <p id="visualizerArtist">Choose a track or drop music into your queue.</p>
+                </div>
+                <div class="viz-bottomline"><button type="button" class="viz-style-toggle" id="visualizerStyleToggle" aria-label="Switch visualizer design"><span class="small-wave-icon" id="visualizerStyleIcon" aria-hidden="true">〰</span><span id="visualizerStyleLabel">Waves</span></button></div>
+              </div>
+            </section>
+            <aside class="queue-panel panel-surface" id="musicQueuePanel" aria-label="Music queue">
+              <div class="queue-header"><div><p class="eyebrow">UP NEXT</p><h2>Music queue <span class="queue-count" id="musicQueueCount">0</span></h2></div><button class="icon-button queue-collapse" data-collapse="musicQueuePanel" aria-label="Collapse queue" title="Collapse queue"><span class="icon-slot" data-icon="menu"></span></button></div>
+              <div class="queue-list" id="musicQueueList"></div>
+              <div class="queue-drop-hint" id="musicDropHint"><span class="drop-icon"><span class="icon-slot" data-icon="music"></span></span><strong>Drop music here</strong><span>Audio files from your PC will be added to this queue.</span></div>
+              <div class="queue-footer"><div class="queue-footer-tools"><button type="button" class="icon-button queue-tool-button queue-clear-button" data-clear-queue="music" aria-label="Clear music queue" title="Clear music queue"><span class="icon-slot" data-icon="broom"></span></button><button type="button" class="icon-button queue-tool-button queue-refresh-button" data-refresh-queue="music" aria-label="Rescan selected music folder and sync queue" title="Rescan selected folder and sync queue"><span class="icon-slot" data-icon="refresh"></span></button><div class="sort-menu-host"><button type="button" class="icon-button queue-tool-button queue-sort-button" id="musicSortToggle" data-sort-toggle="music" aria-label="Sort Music queue" title="Sort by: Manual order" aria-haspopup="menu" aria-expanded="false" aria-controls="musicSortMenu"><span class="icon-slot" data-icon="sort"></span></button><div class="sort-menu" id="musicSortMenu" role="menu" aria-label="Sort Music queue" hidden><div class="sort-menu-heading">Sort by</div><button type="button" class="sort-menu-option is-selected" role="menuitemradio" data-sort-option="music:default" aria-checked="true"><span>Manual order</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="music:recentPlayed" aria-checked="false"><span>Recently Played</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="music:recentAdded" aria-checked="false"><span>Recently Added</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="music:artists" aria-checked="false"><span>Artists</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="music:album" aria-checked="false"><span>Album</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="music:alphabetical" aria-checked="false"><span>Alphabetical</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="music:year" aria-checked="false"><span>Year</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button></div></div></div><div class="queue-footer-actions"><button type="button" class="icon-button" data-add-files="music" aria-label="Add music files" title="Add music files"><span class="icon-slot" data-icon="plus"></span></button><button type="button" class="icon-button folder-button" data-pick-folder="music" aria-label="Select music folder" title="Select music folder"><span class="icon-slot" data-icon="folder"></span></button></div></div>
+            </aside>
+            <button class="reopen-queue" data-reopen="musicQueuePanel" aria-label="Show music queue" title="Show music queue"><span class="icon-slot" data-icon="menu"></span><span>Queue</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="page page-video" id="page-video" aria-label="Video" hidden>
+        <div class="content-wrap player-content">
+          <div class="page-heading compact-heading">
+            <div><h1>Video</h1></div>
+
+          </div>
+          <div class="media-workspace">
+            <section class="video-stage panel-surface" aria-label="Video player">
+              <div class="video-frame" id="videoFrame">
+                <video id="videoPlayer" playsinline preload="metadata"></video>
+                <div class="video-empty" id="videoEmpty"><div class="empty-player-mark"><span class="icon-slot" data-icon="video"></span></div><p class="eyebrow">YOUR PRIVATE SCREENING ROOM</p><h2>Settle in.</h2><p>Choose a video from your library or drop a file into the queue.</p><button class="primary-button" data-pick-folder="video"><span class="icon-slot" data-icon="folder"></span>Choose video folder</button></div>
+                <div class="video-title-overlay"><strong id="videoTitleOverlay">No video selected</strong></div>
+                <button class="video-center-play" id="videoCenterPlay" aria-label="Play video"><span class="icon-slot" data-icon="play"></span></button>
+                <button class="video-fullscreen" id="videoFullscreen" aria-label="Enter fullscreen" title="Fullscreen"><span class="icon-slot" data-icon="fullscreen"></span></button>
+              </div>
+            </section>
+            <aside class="queue-panel panel-surface" id="videoQueuePanel" aria-label="Video queue">
+              <div class="queue-header"><div><p class="eyebrow">UP NEXT</p><h2>Video queue <span class="queue-count" id="videoQueueCount">0</span></h2></div><button class="icon-button queue-collapse" data-collapse="videoQueuePanel" aria-label="Collapse queue" title="Collapse queue"><span class="icon-slot" data-icon="menu"></span></button></div>
+              <div class="queue-list" id="videoQueueList"></div>
+              <div class="queue-drop-hint" id="videoDropHint"><span class="drop-icon"><span class="icon-slot" data-icon="video"></span></span><strong>Drop videos here</strong><span>Your video queue stays on this device.</span></div>
+              <div class="queue-footer"><div class="queue-footer-tools"><button type="button" class="icon-button queue-tool-button queue-clear-button" data-clear-queue="video" aria-label="Clear video queue" title="Clear video queue"><span class="icon-slot" data-icon="broom"></span></button><button type="button" class="icon-button queue-tool-button queue-refresh-button" data-refresh-queue="video" aria-label="Rescan selected video folder and sync queue" title="Rescan selected folder and sync queue"><span class="icon-slot" data-icon="refresh"></span></button><div class="sort-menu-host"><button type="button" class="icon-button queue-tool-button queue-sort-button" id="videoSortToggle" data-sort-toggle="video" aria-label="Sort Video queue" title="Sort by: Manual order" aria-haspopup="menu" aria-expanded="false" aria-controls="videoSortMenu"><span class="icon-slot" data-icon="sort"></span></button><div class="sort-menu" id="videoSortMenu" role="menu" aria-label="Sort Video queue" hidden><div class="sort-menu-heading">Sort by</div><button type="button" class="sort-menu-option is-selected" role="menuitemradio" data-sort-option="video:default" aria-checked="true"><span>Manual order</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="video:recentPlayed" aria-checked="false"><span>Recently Played</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="video:recentAdded" aria-checked="false"><span>Recently Added</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="video:alphabetical" aria-checked="false"><span>Alphabetical</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="video:year" aria-checked="false"><span>Year</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button></div></div></div><div class="queue-footer-actions"><button type="button" class="icon-button" data-add-files="video" aria-label="Add video files" title="Add video files"><span class="icon-slot" data-icon="plus"></span></button><button type="button" class="icon-button folder-button" data-pick-folder="video" aria-label="Select video folder" title="Select video folder"><span class="icon-slot" data-icon="folder"></span></button></div></div>
+            </aside>
+            <button class="reopen-queue" data-reopen="videoQueuePanel" aria-label="Show video queue" title="Show video queue"><span class="icon-slot" data-icon="menu"></span><span>Queue</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="page page-tv" id="page-tv" aria-label="TV" hidden>
+        <div class="content-wrap player-content">
+          <div class="page-heading compact-heading">
+            <div><h1>TV</h1></div>
+          </div>
+          <div class="media-workspace">
+            <section class="video-stage tv-stage panel-surface" aria-label="TV stream player">
+              <div class="video-frame tv-frame" id="tvFrame">
+                <video id="tvPlayer" playsinline preload="none"></video>
+                <div class="video-empty tv-empty" id="tvEmpty"><div class="empty-player-mark"><span class="icon-slot" data-icon="tv"></span></div><p class="eyebrow">OPEN TV STREAMS</p><h2>Find your channel.</h2><p>Browse the community guide, then press play.</p><button class="primary-button" data-goto="tv"><span class="icon-slot" data-icon="broadcast"></span>Browse channel guide</button></div>
+                <button class="video-center-play" id="tvCenterPlay" aria-label="Play channel"><span class="icon-slot" data-icon="play"></span></button>
+                <div class="video-title-overlay tv-title-overlay"><span class="live-pill live-pill-red"><span class="pulse-dot"></span>LIVE</span><strong id="tvTitleOverlay">No channel selected</strong></div>
+                <button class="video-fullscreen" id="tvFullscreen" aria-label="Enter fullscreen" title="Fullscreen"><span class="icon-slot" data-icon="fullscreen"></span></button>
+              </div>
+            </section>
+            <aside class="queue-panel channel-panel panel-surface" id="tvChannelPanel" aria-label="TV channel guide">
+              <div class="queue-header channel-header"><div><p class="eyebrow">OPEN STREAM GUIDE</p><h2>Channels <span class="queue-count" id="tvChannelCount">—</span></h2></div><button class="icon-button queue-collapse" data-collapse="tvChannelPanel" aria-label="Collapse channel guide" title="Collapse channel guide"><span class="icon-slot" data-icon="menu"></span></button></div>
+              <div class="channel-search"><span class="icon-slot" data-icon="search"></span><input id="channelSearch" type="search" placeholder="Find a channel…" aria-label="Find a channel" /></div>
+              <div class="channel-list" id="tvChannelList"></div>
+              <div class="channel-footer"><span class="guide-source">IPTV-ORG · PUBLIC STREAMS</span><div class="channel-footer-tools"><div class="sort-menu-host"><button type="button" class="icon-button queue-tool-button queue-sort-button" id="tvSortToggle" data-sort-toggle="tv" aria-label="Sort TV channels" title="Sort by: Guide order" aria-haspopup="menu" aria-expanded="false" aria-controls="tvSortMenu"><span class="icon-slot" data-icon="sort"></span></button><div class="sort-menu" id="tvSortMenu" role="menu" aria-label="Sort TV channels" hidden><div class="sort-menu-heading">Sort by</div><button type="button" class="sort-menu-option is-selected" role="menuitemradio" data-sort-option="tv:default" aria-checked="true"><span>Guide order</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="tv:recentPlayed" aria-checked="false"><span>Recently Played</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="tv:recentAdded" aria-checked="false"><span>Recently Added</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button><button type="button" class="sort-menu-option" role="menuitemradio" data-sort-option="tv:alphabetical" aria-checked="false"><span>Alphabetical</span><span class="sort-option-direction" aria-hidden="true"></span><span class="sort-menu-check" aria-hidden="true">✓</span></button></div></div><button class="icon-button folder-button" id="refreshTv" aria-label="Refresh channel guide" title="Refresh channel guide"><span class="icon-slot" data-icon="refresh"></span></button></div></div>
+            </aside>
+            <button class="reopen-queue" data-reopen="tvChannelPanel" aria-label="Show channel guide" title="Show channel guide"><span class="icon-slot" data-icon="menu"></span><span>Channels</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="page page-settings" id="page-settings" aria-label="Settings" hidden>
+        <div class="content-wrap settings-content" id="settingsContent"></div>
+      </section>
+    </main>
+
+    <footer class="player-bar" id="playerBar" aria-label="Media controls">
+      <div class="timeline-row"><span class="time-label" id="elapsedTime">00:00</span><input class="timeline" id="timeline" type="range" min="0" max="100" value="0" aria-label="Playback position" /><span class="time-label time-end" id="durationTime">00:00</span></div>
+      <div class="player-controls-row">
+        <div class="playing-summary">
+          <div class="mini-art" id="miniArt"><span class="icon-slot" data-icon="music"></span></div>
+          <div class="playing-text"><strong id="barTitle">Nothing playing</strong><span id="barSubtitle">Choose music, video or a live channel.</span></div>
+        </div>
+        <div class="transport-controls">
+          <button class="transport-button favorite-button" id="favoriteButton" aria-label="Add to favorites" title="Add to favorites" disabled><span class="icon-slot" data-icon="heart"></span></button>
+          <button class="transport-button secondary-transport" id="shuffleButton" aria-label="Shuffle" title="Shuffle"><span class="icon-slot" data-icon="shuffle"></span></button>
+          <button class="transport-button" id="previousButton" aria-label="Previous" title="Previous"><span class="icon-slot" data-icon="previous"></span></button>
+          <button class="transport-button primary-transport" id="playPauseButton" aria-label="Play" title="Play"><span class="icon-slot" data-icon="play"></span></button>
+          <button class="transport-button" id="nextButton" aria-label="Next" title="Next"><span class="icon-slot" data-icon="next"></span></button>
+          <button class="transport-button" id="stopButton" aria-label="Stop" title="Stop"><span class="icon-slot" data-icon="stop"></span></button>
+          <button class="transport-button secondary-transport" id="repeatButton" data-repeat-mode="off" aria-label="Repeat: Off" aria-pressed="false" title="Repeat: Off"><span class="icon-slot" data-icon="repeat"></span><span class="repeat-one-badge" aria-hidden="true">1</span></button>
+        </div>
+        <div class="output-controls">
+          <button class="icon-button volume-button" id="muteButton" aria-label="Mute" title="Mute"><span class="icon-slot" data-icon="volume"></span></button>
+          <input class="volume-range" id="volumeRange" type="range" min="0" max="1" step="0.01" value="0.72" aria-label="Volume" />
+          <button class="icon-button fullscreen-button" id="globalFullscreen" aria-label="Fullscreen player" title="Fullscreen player"><span class="icon-slot" data-icon="fullscreen"></span></button>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <audio id="audioPlayer" preload="metadata" hidden></audio>
+  <audio id="audioPlayerSecondary" preload="metadata" aria-hidden="true" hidden></audio>
+  <input id="fallbackFolderPicker" type="file" webkitdirectory multiple hidden />
+  <input id="fallbackFilePicker" type="file" multiple hidden />
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="./src/app.js" defer></script>
+</body>
+</html>

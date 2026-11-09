@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
+    <UseWPF>true</UseWPF>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>assets\app-icon.ico</ApplicationIcon>
+    <AssemblyName>KnightWin-Media-Player</AssemblyName>
+    <RootNamespace>RevibeMediaCentre</RootNamespace>
+    <Version>1.0.0</Version>
+    <Product>KnightWin Media Player</Product>
+    <Company>KnightWin</Company>
+    <Description>A local-first Windows media player and modern successor to Revibe Media Centre.</Description>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <Copyright>Copyright © KnightWin</Copyright>
+    <AssemblyTitle>KnightWin Media Player</AssemblyTitle>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
+    <PackageReference Include="TagLibSharp" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="index.html" LogicalName="revibe/index.html" />
+    <EmbeddedResource Include="native-bridge.js" LogicalName="revibe/native-bridge.js" />
+    <EmbeddedResource Include="src\**\*" LogicalName="revibe/src/%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="assets\**\*" LogicalName="revibe/assets/%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="LICENSE" LogicalName="revibe/LICENSE" />
+    <EmbeddedResource Include="LICENSES\**\*" LogicalName="revibe/LICENSES/%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="THIRD-PARTY-NOTICES.md" LogicalName="revibe/THIRD-PARTY-NOTICES.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="index.html" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="native-bridge.js" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="src\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="assets\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="LICENSE" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="LICENSES\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="THIRD-PARTY-NOTICES.md" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
